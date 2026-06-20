@@ -157,7 +157,7 @@ jobs:
 
       # Generate README only (only for DRAFT variant)
       - name: Generate notes (KiCad ${{ env.kicad_version }})
-        if: env.kibot_variant != 'DRAFT'
+        if: env.kibot_variant == 'DRAFT'
         uses: jenseng/dynamic-uses@v1
         with:
           uses: INTI-CMNB/KiBot@v2_dk${{ env.kicad_version }}
@@ -165,7 +165,6 @@ jobs:
 
       # Generate outputs
       - name: Generate notes (KiCad ${{ env.kicad_version }})
-        if: env.kibot_variant != 'DRAFT'
         uses: jenseng/dynamic-uses@v1
         with:
           uses: INTI-CMNB/KiBot@v2_dk${{ env.kicad_version }}
