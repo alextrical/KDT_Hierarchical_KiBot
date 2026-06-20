@@ -2,6 +2,15 @@ name: CI
 
 on:
   workflow_call:
+    inputs:
+      kibot_variant: 
+        description: Variant (DRAFT,PRELIMINARY,CHECKED,RELEASED)
+        required: false
+        type: string
+        default: DRAFT
+    secrets:
+      token:
+        required: true
   workflow_dispatch:
   push:
     tags:
