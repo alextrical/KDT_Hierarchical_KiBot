@@ -647,8 +647,8 @@ definitions:
   IMAGES_DIR: Images
   3D_DIR: 3D
   RESOURCES_DIR: kicad-pipeline-assets
-  REPORT_TEMPLATE_DIR: '@RESOURCES_DIR@/assets/templates'
-  SCRIPTS_DIR: '@RESOURCES_DIR@/assets/scripts'
+  REPORT_TEMPLATE_DIR: '@RESOURCES_DIR@/report_templates'
+  SCRIPTS_DIR: '@RESOURCES_DIR@/scripts'
 
   # Layer names. Should match user-defined names in the PCB.  ==================
 
