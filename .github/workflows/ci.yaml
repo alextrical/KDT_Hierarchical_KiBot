@@ -103,14 +103,14 @@ jobs:
         with:
           tag: ${{ github.ref_name }}
 
-      - name: Commit updated CHANGELOG
-        if: ${{ github.ref_type == 'tag' }}
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          branch: main
-          commit_message: Update CHANGELOG
-          file_pattern: CHANGELOG.md
-          push_options: '--force'
+      # - name: Commit updated CHANGELOG
+      #   if: ${{ github.ref_type == 'tag' }}
+      #   uses: stefanzweifel/git-auto-commit-action@v7
+      #   with:
+      #     branch: main
+      #     commit_message: Update CHANGELOG
+      #     file_pattern: CHANGELOG.md
+      #     push_options: '--force'
 
       - name: Cache 3D models data
         id: models-cache
@@ -214,11 +214,11 @@ jobs:
           git clean -f "*.kicad_dru"
           git clean -f "*.kicad_prl"
 
-      - name: Update Outputs
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          branch: ${{ github.ref_name }}
-          commit_message: Update Outputs
+      # - name: Update Outputs
+      #   uses: stefanzweifel/git-auto-commit-action@v7
+      #   with:
+      #     branch: ${{ github.ref_name }}
+      #     commit_message: Update Outputs
 
       - name: Store log
         if: ${{ always() }}
