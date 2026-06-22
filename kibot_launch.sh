@@ -123,7 +123,7 @@ done
 
 # Get version if not specified
 if [[ -z "$revision" ]]; then
-    revision=$(python3 kibot_resources/scripts/get_changelog_version.py -f CHANGELOG.md)
+    revision=$(python3 kicad-pipeline-assets/assets/scripts/get_changelog_version.py -f CHANGELOG.md)
     if [[ $? -ne 0 ]]; then
         echo -e "${YELLOW}Warning: Unable to determine version from CHANGELOG.md. Defaulting to empty revision.${NC}"
         revision=""

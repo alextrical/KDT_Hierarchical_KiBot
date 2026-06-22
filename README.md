@@ -89,35 +89,35 @@ An example project using this template can be found [here](https://github.com/ng
     git clone https://github.com/nguyen-v/KDT_Hierarchical_KiBot.git
     ```
 
-3. Install the fonts inside of [`kibot_resources/fonts`](kibot_resources/fonts) if not already installed on the system.
+3. Install the fonts inside of [`kicad-pipeline-assets/assets/fonts`](kicad-pipeline-assets/assets/fonts) if not already installed on the system.
 
    **Linux**:
 
    ```
-   cp -i KDT_Hierarchical_KiBot/kibot_resources/fonts/*.ttf ~/.fonts/
+   cp -i KDT_Hierarchical_KiBot/kicad-pipeline-assets/assets/fonts/*.ttf ~/.fonts/
    fc-cache
    ```
 
    **Mac**:
 
    ```
-   cp -i KDT_Hierarchical_KiBot/kibot_resources/fonts/*.ttf ~/Library/Fonts/
+   cp -i KDT_Hierarchical_KiBot/kicad-pipeline-assets/assets/fonts/*.ttf ~/Library/Fonts/
    ```
 
-4. A custom color theme ([`Altium_Theme.json`](kibot_resources/colors/Altium_Theme.json)) is also provided in [`kibot_resources/colors`](kibot_resources/colors).
+4. A custom color theme ([`Altium_Theme.json`](kicad-pipeline-assets/assets/colors/Altium_Theme.json)) is also provided in [`kicad-pipeline-assets/assets/colors`](kicad-pipeline-assets/assets/colors).
 You should move this file to your KiCad Themes folder.
 
     **Windows**:
 
-    `xcopy "KDT_Hierarchical_KiBot\kibot_resources\colors\Altium_Theme.json" "C:\Users\%USERNAME%\AppData\Roaming\kicad\8.0\colors\" /-Y`
+    `xcopy "KDT_Hierarchical_KiBot\kicad-pipeline-assets/assets\colors\Altium_Theme.json" "C:\Users\%USERNAME%\AppData\Roaming\kicad\8.0\colors\" /-Y`
 
     **Linux**:
 
-    `cp -i KDT_Hierarchical_KiBot/kibot_resources/colors/Altium_Theme.json ~/.config/kicad/8.0/colors/`
+    `cp -i KDT_Hierarchical_KiBot/kicad-pipeline-assets/assets/colors/Altium_Theme.json ~/.config/kicad/8.0/colors/`
 
     **Mac**:
 
-    `cp -i KDT_Hierarchical_KiBot/kibot_resources/colors/Altium_Theme.json ~/Library/Preferences/kicad/8.0/colors/`
+    `cp -i KDT_Hierarchical_KiBot/kicad-pipeline-assets/assets/colors/Altium_Theme.json ~/Library/Preferences/kicad/8.0/colors/`
 
 > [!NOTE]
 > In the steps above, replace ```8.0``` with ```9.0``` for KiCad 9
@@ -188,7 +188,7 @@ You should move this file to your KiCad Themes folder.
       KEY_COLOR: '#00FF00' # background color to remove
     ```
 
-8. The files inside of [`kibot_resources/templates`](kibot_resources/templates) should also be modified according to your project. These include Assembly and Fabrication notes, Impedance table and README file templates.
+8. The files inside of [`kicad-pipeline-assets/assets/templates`](kicad-pipeline-assets/assets/templates) should also be modified according to your project. These include Assembly and Fabrication notes, Impedance table and README file templates.
 
 9. Edit the [`*.kicad_dru`](KDT_Hierarchical_KiBot.kicad_dru) if necessary according to your design rules. Right now, it has been set for PCBWay 6-layer PCBs with 2oz outer 1oz inner, focusing on lowest cost.
 
@@ -200,7 +200,7 @@ You should move this file to your KiCad Themes folder.
 
 This template is meant to be used in a CI/CD environment on GitHub. The workflow is as follows:
 
-- Any custom font used in the project must be added to the [`kibot_resources/fonts`](kibot_resources/fonts) folder.
+- Any custom font used in the project must be added to the [`kicad-pipeline-assets/assets/fonts`](kicad-pipeline-assets/assets/fonts) folder.
 
 > [!NOTE]
 > KiCad 9 allows for fonts to be embedded in the schematic. However, it is still good practice to add the fonts in the folder mentioned.
@@ -277,7 +277,7 @@ The easiest way to install KiBot if custom development is not required is with d
 
 1.  Install **and run** [Docker Desktop](https://docs.docker.com/desktop/)
   
-2.  Run the script `docker_kibot_windows.bat` or `docker_kibot_linux.sh` depending on your platform in [`kibot_resources/scripts`](kibot_resources/scripts). Currently tested on Windows and WSL2. This should pull and start a docker running the `dev` branch of KiBot. You should have access to your local files.
+2.  Run the script `docker_kibot_windows.bat` or `docker_kibot_linux.sh` depending on your platform in [`kicad-pipeline-assets/assets/scripts`](kicad-pipeline-assets/assets/scripts). Currently tested on Windows and WSL2. This should pull and start a docker running the `dev` branch of KiBot. You should have access to your local files.
 
 ***
 **KiCad 8**
@@ -576,7 +576,7 @@ This layer hold the assembly drawing and 3D render for the backside of the PCB. 
 This layer holds information about the PCB stackup and dimensions, impedance table and fabrication notes. The PCB stackup can be added by creating a group named `kibot_fancy_stackup`. The impedance table with a group named `kibot_table_csv_impedance_table` and the fabrication notes are included with the text variable `${FABRICATION_NOTES}`.
 
 > [!NOTE]
-> The text variable ${FABRICATION_NOTE} is dependent on the [`kibot_resources/templates/fabrication_notes.txt`](kibot_resources/templates/fabrication_notes.txt) file. Modify it to your needs.
+> The text variable ${FABRICATION_NOTE} is dependent on the [`kicad-pipeline-assets/assets/templates/fabrication_notes.txt`](kicad-pipeline-assets/assets/templates/fabrication_notes.txt) file. Modify it to your needs.
 
 <p align="center">
   <img alt="F.Dimensions" src="https://github.com/user-attachments/assets/6f47fa22-8bc8-4a65-97d7-891e124f82a2">
@@ -657,7 +657,7 @@ The following directory structure is used in the template. Folders marked as 'op
 ├─ HTML               # HTML files for generated webpage
 ├─ Images             # Pictures and renders
 │
-├─ kibot_resources
+├─ kicad-pipeline-assets/assets
 │  ├─ colors          # Color theme for KiCad
 │  ├─ fonts           # Fonts used in the project
 │  ├─ scripts         # External scripts used with KiBot

@@ -39,7 +39,7 @@
     ├─ HTML               # HTML files for generated webpage
     ├─ Images             # Pictures and renders
     │
-    ├─ kibot_resources    # External resources for KiBot
+    ├─ kicad-pipeline-assets/assets    # External resources for KiBot
     │  ├─ colors          # Color theme for KiCad
     │  ├─ fonts           # Fonts used in the project
     │  ├─ scripts         # External scripts used with KiBot
