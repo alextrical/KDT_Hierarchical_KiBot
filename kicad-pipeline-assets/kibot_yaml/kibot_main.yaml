@@ -646,7 +646,7 @@ definitions:
   TESTPOINTS_DIR: '@TESTING_DIR@/Testpoints'
   IMAGES_DIR: Images
   3D_DIR: 3D
-  RESOURCES_DIR: kibot_resources
+  RESOURCES_DIR: kicad-pipeline-assets/assets
   REPORT_TEMPLATE_DIR: '@RESOURCES_DIR@/templates'
   SCRIPTS_DIR: '@RESOURCES_DIR@/scripts'
 
