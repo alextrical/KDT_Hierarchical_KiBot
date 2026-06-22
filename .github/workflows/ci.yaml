@@ -32,7 +32,7 @@ env:
   kibot_variant: DRAFT
 
   # Set the KiCad version to 10
-  kicad_version: 10
+  kicad_version: 9
 
   kibot_log: kibot_run.log
  
