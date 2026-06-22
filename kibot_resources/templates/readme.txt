@@ -45,7 +45,7 @@
     │  ├─ scripts         # External scripts used with KiBot
     │  └─ templates       # Templates for KiBot generated reports
     │
-    ├─ kibot_yaml         # KiBot YAML config files
+    ├─ kicad-pipeline-assets/kibot_yaml         # KiBot YAML config files
     ├─ KiRI               # KiRI (PCB diff viewer) files
     │
     ├─ lib                # KiCad footprint and symbol libraries

@@ -9,7 +9,7 @@ NC='\033[0m' # No Color
 variant="CHECKED"
 output_dir="."
 kibot_base="kibot"
-kibot_config="-c 'kibot_yaml/kibot_main.yaml'"
+kibot_config="-c 'kicad-pipeline-assets/kibot_yaml/kibot_main.yaml'"
 revision=""
 costs_flag=false
 server_flag=false
@@ -162,7 +162,7 @@ esac
 
 # Determine command based on variant
 if [[ "$costs_flag" == true ]]; then
-    kibot_command1="$kibot_base --skip-pre erc,drc,draw_fancy_stackup $kibot_config -d '$output_dir' -g variant=$variant -E REVISION='$revision' -E KICOST_CONFIG='kibot_yaml/kicost_config_local.yaml' xlsx_bom"
+    kibot_command1="$kibot_base --skip-pre erc,drc,draw_fancy_stackup $kibot_config -d '$output_dir' -g variant=$variant -E REVISION='$revision' -E KICOST_CONFIG='kicad-pipeline-assets/kibot_yaml/kicost_config_local.yaml' xlsx_bom"
 else
     case "$variant" in
         DRAFT)

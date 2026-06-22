@@ -135,7 +135,7 @@ You should move this file to your KiCad Themes folder.
    git checkout -b dev
    ```
    
-7. Modify the following fields in [`kibot_main.yaml`](kibot_yaml/kibot_main.yaml#L556) according to your project:
+7. Modify the following fields in [`kibot_main.yaml`](kicad-pipeline-assets/kibot_yaml/kibot_main.yaml#L556) according to your project:
     ```
       # Metadata ===================================================================
 
@@ -192,7 +192,7 @@ You should move this file to your KiCad Themes folder.
 
 9. Edit the [`*.kicad_dru`](KDT_Hierarchical_KiBot.kicad_dru) if necessary according to your design rules. Right now, it has been set for PCBWay 6-layer PCBs with 2oz outer 1oz inner, focusing on lowest cost.
 
-10.  Edit the [`kibot_out_csv_bom.yaml`](kibot_yaml/kibot_out_csv_bom.yaml), [`kibot_out_html_bom.yaml`](kibot_yaml/kibot_out_html_bom.yaml) and [`kibot_out_xlsx_bom.yaml`](kibot_yaml/kibot_out_xlsx_bom.yaml) files according to the component fields that you use. You can refer to the [KiCost Documentation](https://hildogjr.github.io/KiCost/docs/_build/singlehtml/index.html) for the field names.
+10.  Edit the [`kibot_out_csv_bom.yaml`](kicad-pipeline-assets/kibot_yaml/kibot_out_csv_bom.yaml), [`kibot_out_html_bom.yaml`](kicad-pipeline-assets/kibot_yaml/kibot_out_html_bom.yaml) and [`kibot_out_xlsx_bom.yaml`](kicad-pipeline-assets/kibot_yaml/kibot_out_xlsx_bom.yaml) files according to the component fields that you use. You can refer to the [KiCost Documentation](https://hildogjr.github.io/KiCost/docs/_build/singlehtml/index.html) for the field names.
 
 ## USAGE
 
@@ -229,7 +229,7 @@ This template is meant to be used in a CI/CD environment on GitHub. The workflow
 
 - To avoid conflicts, you should avoid modifying the `.kicad_pro` file locally before pulling from the remote (after the completion of a KiBot run). Otherwise, you will need to solve merge conflicts when pulling the file.
 
-- To synchronise the Revision History of the schematic with the `CHANGELOG.md` file, you should create new text variables in [kibot_pre_set_text_variables.yaml](kibot_yaml/kibot_pre_set_text_variables.yaml#L39). The text variables should then be added in the text boxes of the Revision History sheet.
+- To synchronise the Revision History of the schematic with the `CHANGELOG.md` file, you should create new text variables in [kibot_pre_set_text_variables.yaml](kicad-pipeline-assets/kibot_yaml/kibot_pre_set_text_variables.yaml#L39). The text variables should then be added in the text boxes of the Revision History sheet.
 
   ```
   - variable: '@RELEASE_TITLE_VAR@x.x.x'
@@ -379,7 +379,7 @@ You can also specify a variant if desired:
 For more information, please have a look at the official [documentation](https://hildogjr.github.io/KiCost/docs/_build/singlehtml/index.html)
 
 > [!CAUTION]
-> KiCost expects the **MPN (Manufacturer Part Number)** and **Manufacturer** fields to be named in a certain way. To cater for different naming conventions, we rename user-defined fields to KiCost-compatible fields in the KiBot run. You can set your user-defined field for **MPN** and **Manufacturer** in the [`kibot_yaml/kibot_main.yaml`](kibot_yaml/kibot_main.yaml#L576) by editing the `MPN_FIELD` and `MAN_FIELD` definitions.
+> KiCost expects the **MPN (Manufacturer Part Number)** and **Manufacturer** fields to be named in a certain way. To cater for different naming conventions, we rename user-defined fields to KiCost-compatible fields in the KiBot run. You can set your user-defined field for **MPN** and **Manufacturer** in the [`kicad-pipeline-assets/kibot_yaml/kibot_main.yaml`](kicad-pipeline-assets/kibot_yaml/kibot_main.yaml#L576) by editing the `MPN_FIELD` and `MAN_FIELD` definitions.
 
 <p align="center">
   <img alt="XLSX BoM" src="https://github.com/user-attachments/assets/e7683ae3-efcc-4f64-b4b7-c4c39c3c9d48">
@@ -436,7 +436,7 @@ On the same page, The `Revision` and `Company` fields should be set to `${REVISI
   <img alt="Drawing Sheet" src="https://github.com/user-attachments/assets/311f4e13-cdb9-45cb-9fcf-1a88f8432416">
 </p>
 
-For an automated table of contents, you should copy the root page of the template into your project, or use the `${SHEET_NAME_X}` text variables. These variables will be replaced by the sheet name (page `X`) when running KiBot. Currently the maximum number of pages is set to 40. You are free to add new text variables in [`kibot_yaml/kibot_pre_set_text_variables`](kibot_yaml/kibot_pre_set_text_variables.yaml#L160).
+For an automated table of contents, you should copy the root page of the template into your project, or use the `${SHEET_NAME_X}` text variables. These variables will be replaced by the sheet name (page `X`) when running KiBot. Currently the maximum number of pages is set to 40. You are free to add new text variables in [`kicad-pipeline-assets/kibot_yaml/kibot_pre_set_text_variables`](kicad-pipeline-assets/kibot_yaml/kibot_pre_set_text_variables.yaml#L160).
 
 The `${VARIANT}` text variable is replaced by the current variant name (e.g. DRAFT or RELEASED). 
 
@@ -452,7 +452,7 @@ To get 3D pictures of the PCB in the schematic, you can create text boxes with t
 
 
 
-To synchronise the Revision History of the schematic with the `CHANGELOG.md` file, you should create new text variables in [kibot_pre_set_text_variables.yaml](kibot_yaml/kibot_pre_set_text_variables.yaml#L39). The text variables (`${RELEASE_TITLE_VAR<VERSION>}` and `${RELEASE_BODY_VAR<VERSION>`) should then be added in the text boxes of the Revision History sheet.
+To synchronise the Revision History of the schematic with the `CHANGELOG.md` file, you should create new text variables in [kibot_pre_set_text_variables.yaml](kicad-pipeline-assets/kibot_yaml/kibot_pre_set_text_variables.yaml#L39). The text variables (`${RELEASE_TITLE_VAR<VERSION>}` and `${RELEASE_BODY_VAR<VERSION>`) should then be added in the text boxes of the Revision History sheet.
 
   ```
   - variable: '@RELEASE_TITLE_VAR@x.x.x'
@@ -465,7 +465,7 @@ To synchronise the Revision History of the schematic with the `CHANGELOG.md` fil
 
 ### PCB
 
-The layer names of the PCB should follow the ones defined in [kibot_main.yaml](kibot_yaml/kibot_main.yaml#L631). 
+The layer names of the PCB should follow the ones defined in [kibot_main.yaml](kicad-pipeline-assets/kibot_yaml/kibot_main.yaml#L631). 
 
 ```
   LAYER_TITLE_PAGE: TitlePage
@@ -663,7 +663,7 @@ The following directory structure is used in the template. Folders marked as 'op
 │  ├─ scripts         # External scripts used with KiBot
 │  └─ templates       # Templates for KiBot generated reports
 │
-├─ kibot_yaml         # KiBot YAML config files
+├─ kicad-pipeline-assets/kibot_yaml         # KiBot YAML config files
 ├─ KiRI               # KiRI (PCB diff viewer) files
 │
 ├─ lib                # Footprint and symbol libraries (optional)
