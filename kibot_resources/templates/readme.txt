@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-  <img alt="Logo" width="33%" src="Logos/dummy_logo.svg">
+  <img alt="Logo" width="33%" src="kicad-pipeline-assets/logos/dummy_logo.svg">
 </p>
 
 <h1 align="center">${BOARD_NAME}</h1>
@@ -53,7 +53,7 @@
     │  ├─ lib_fp          # Footprint libraries
     │  └─ lib_sym         # Symbol libraries
     │
-    ├─ Logos              # Logos
+    ├─ kicad-pipeline-assets/logos              # kicad-pipeline-assets/logos
     │
     ├─ Manufacturing      # Assembly and fabrication documents
     │  ├─ Assembly        # Assembly documents (BoM, pos, notes)

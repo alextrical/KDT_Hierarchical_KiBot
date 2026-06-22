@@ -145,7 +145,7 @@ You should move this file to your KiCad Themes folder.
       COMPANY: Company Name
       DESIGNER: Author
 
-      LOGO: 'Logos/dummy_logo.png'
+      LOGO: 'kicad-pipeline-assets/logos/dummy_logo.png'
       GIT_URL: 'https://github.com/nguyen-v/KDT_Hierarchical_KiBot'
 
       # Preflight ==================================================================
@@ -422,7 +422,7 @@ This section will describe the necessary steps to convert an existing project to
 
 ### Folders
 
-You should keep the folder structure as defined in [DIRECTORY STRUCTURE](#directory-structure). The folders marked as optional are not mandatory for the project to work, as long as the relevant file paths are correct (e.g. logos). You should then go through the same steps as in [GETTING STARTED](#getting-started) and [USAGE](#usage).
+You should keep the folder structure as defined in [DIRECTORY STRUCTURE](#directory-structure). The folders marked as optional are not mandatory for the project to work, as long as the relevant file paths are correct (e.g. kicad-pipeline-assets/logos). You should then go through the same steps as in [GETTING STARTED](#getting-started) and [USAGE](#usage).
 
 ### Schematic
 
@@ -671,7 +671,7 @@ The following directory structure is used in the template. Folders marked as 'op
 │  ├─ lib_fp          # Footprint libraries
 │  └─ lib_sym         # Symbol libraries
 │
-├─ Logos              # Logos (optional)
+├─ kicad-pipeline-assets/logos              # kicad-pipeline-assets/logos (optional)
 │
 ├─ Manufacturing
 │  ├─ Assembly        # Assembly documents (BoM, pos, notes)
