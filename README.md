@@ -171,7 +171,7 @@ You should move this file to your KiCad Themes folder.
       # Schematic parameters =======================================================
 
       COLOR_THEME: Altium_Theme
-      SHEET_WKS: ${KIPRJMOD}/Templates/KDT_Template_PCB_GIT_A4.kicad_wks
+      SHEET_WKS: ${KIPRJMOD}/kicad-pipeline-assets/templates/Template_PCB_GIT_A4.kicad_wks
       FAB_SCALING: 1
       ASSEMBLY_SCALING: 1
 
@@ -426,7 +426,7 @@ You should keep the folder structure as defined in [DIRECTORY STRUCTURE](#direct
 
 ### Schematic
 
-You should select [`Templates/KDT_Template_GIT.kicad_wks`](Templates/KDT_Template_GIT.kicad_wks) as your Drawing Sheet in:
+You should select [`kicad-pipeline-assets/templates/Template_GIT.kicad_wks`](kicad-pipeline-assets/templates/Template_GIT.kicad_wks) as your Drawing Sheet in:
 
 **File → Page Settings → Drawing Sheet**
 
